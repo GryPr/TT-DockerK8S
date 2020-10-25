@@ -25,4 +25,5 @@ func main() {
 	router := mux.NewRouter().StrictSlash(true)
 
 	router.HandleFunc("/", homeLink)
+	http.ListenAndServe(":8000", router)
 }
