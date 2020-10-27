@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tt-dockerk8s-api-deployment
+  labels:
+    app: tt-dockerk8s-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tt-dockerk8s-api
+  template:
+    metadata:
+      labels:
+        app: tt-dockerk8s-api
+    spec:
+      containers:
+      - name: tt-dockerk8s-api
+        image: grypr/tt-dockerk8s:0.1
+        ports:
+        - containerPort: 8000
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tt-dockerk8s-api-deployment2
+  labels:
+    app: tt-dockerk8s-api2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tt-dockerk8s-api2
+  template:
+    metadata:
+      labels:
+        app: tt-dockerk8s-api2
+    spec:
+      containers:
+      - name: tt-dockerk8s-api2
+        image: grypr/tt-dockerk8s:0.1
+        ports:
+        - containerPort: 8000
+
+---
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tt-dockerk8s-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: test-ingress.info
+      http:
+        paths:
+          - path: /1
+            pathType: Prefix
+            backend:
+              service:
+                name: tt-dockerk8s-api-deployment
+                port:
+                  number: 8000
+          - path: /2
+            pathType: Prefix
+            backend:
+              service:
+                name: tt-dockerk8s-api-deployment2
+                port:
+                  number: 8000
