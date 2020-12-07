@@ -10,6 +10,8 @@ Since the start of Docker in 2013, containers have become widely adopted by most
 
 In this talk, we will be going over the basic concepts of containers, and how to deploy a simple REST API written in Go inside of a Docker container. We will then go over Kubernetes, an open-source container orchestration system, which can automatically manage and deploy containers across multiple machines. We will use Kubernetes to deploy our REST API application inside a cluster while exposing the required endpoints to the outside world using Ingress. Afterwards, we will briefly go over Helm, a packaging tool for Kubernetes deployments. Finally, we will look into how Docker and Kubernetes can be secured.
 
+[More info on Concordia ENCS Tech Talks](https://github.com/ConcordiaTechTalks/Talks)
+
 Files relating to this talk can be found here: [https://github.com/GryPr/TT-DockerK8S](https://github.com/GryPr/TT-DockerK8S)
 
 The talk will be livestreamed on Youtube here: 
