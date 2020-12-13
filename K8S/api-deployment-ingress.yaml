@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tt-dockerk8s-api
-        image: grypr/tt-dockerk8s:0.1
+        image: grypr/tt-dockerk8s:0.3
         ports:
         - containerPort: 8000
 
@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
       - name: tt-dockerk8s-api2
-        image: grypr/tt-dockerk8s:0.1
+        image: grypr/tt-dockerk8s:0.3
         ports:
         - containerPort: 8000
 
@@ -53,8 +53,8 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: test-ingress.info
-      http:
+    # - host: test-ingress.info
+    - http:
         paths:
           - path: /1
             pathType: Prefix

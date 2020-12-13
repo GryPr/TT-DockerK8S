@@ -1,0 +1,12 @@
+dockerk8s/.helmignore
+dockerk8s/Chart.yaml
+dockerk8s/values.yaml
+dockerk8s/charts/api-deployment-ingress.yaml
+dockerk8s/templates/_helpers.tpl
+dockerk8s/templates/deployment.yaml
+dockerk8s/templates/hpa.yaml
+dockerk8s/templates/ingress.yaml
+dockerk8s/templates/NOTES.txt
+dockerk8s/templates/service.yaml
+dockerk8s/templates/serviceaccount.yaml
+dockerk8s/templates/tests/test-connection.yaml

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tt-dockerk8s-api-deployment
+  labels:
+    app: tt-dockerk8s-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tt-dockerk8s-api
+  template:
+    metadata:
+      labels:
+        app: tt-dockerk8s-api
+    spec:
+      containers:
+      - name: tt-dockerk8s-api
+        image: grypr/tt-dockerk8s:0.3
+        ports:
+        - containerPort: 8000
