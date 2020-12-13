@@ -17,3 +17,5 @@ Files relating to this talk can be found here: [https://github.com/GryPr/TT-Dock
 The talk will be livestreamed on Youtube here: 
 
 [https://www.youtube.com/watch?v=Qcnz524bXvE](https://www.youtube.com/watch?v=Qcnz524bXvE)
+
+If you have any questions after the Tech Talk concluded, create a new discussion here: https://github.com/GryPr/TT-DockerK8S/discussions
